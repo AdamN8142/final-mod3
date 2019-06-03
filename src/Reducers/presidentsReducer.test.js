@@ -9,8 +9,8 @@ describe('presidentsReducer', () => {
   })
 
   it('should add presidents', () => {
-    const expected = [{ok: 'maybe'}, {ok: 'nope'}]
-    const result = actions.addPresidents(undefined, actions.addPresidents([{ok: 'maybe'}, {ok: 'nope'}]))
+    const expected = {type: 'ADD_PRESIDENTS', presidents: [{ok: 'maybe'}, {ok: 'nope'}]}
+    const result = actions.addPresidents([{ok: 'maybe'}, {ok: 'nope'}])
     expect(result).toEqual(expected)
   })
 })

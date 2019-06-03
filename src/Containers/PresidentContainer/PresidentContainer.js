@@ -6,12 +6,19 @@ import './PresidentContainer.css'
 class PresidentsContainer extends Component {
 
   showPresidents = () => {
-    let mappedPres = this.props.presidents.map((pres)=> {
-      return (
-        <Card pres={pres}/>
-      )
-    })
-    return mappedPres
+    if(this.props.presidents.length < 1) {
+      return <div>
+        <h2>Loading...</h2>
+      </div>
+
+    }else {
+      let mappedPres = this.props.presidents.map((pres)=> {
+        return (
+          <Card pres={pres}/>
+        )
+      })
+      return mappedPres
+    }
   }
 
   render(){

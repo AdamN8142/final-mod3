@@ -1,9 +1,10 @@
 import React from 'react'
+import './Card.css'
 
 
 export const Card = (props ) => {
   return (
-    <div>
+    <div className = 'card'>
       <h1>{props.pres.president}</h1>
       <p>President Number: {props.pres.number}</p>
       <p>Birthday: {props.pres.birth_year}</p>

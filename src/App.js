@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { addPresidents } from '../src/Actions/index'
 
 class App extends Component {
+
   render() {
     return (
       <div className = "App">
@@ -18,8 +19,8 @@ class App extends Component {
 
 componentDidMount(){
   this.fetchPresidents()
-  
 }
+
 
 
 
