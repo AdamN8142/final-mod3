@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import Card from '../../Components/Card'
+import './PresidentContainer.css'
 
 class PresidentsContainer extends Component {
+
+  showPresidents = () => {
+    let mappedPres = this.props.presidents.map((pres)=> {
+      return (
+        <Card pres={pres}/>
+      )
+    })
+    return mappedPres
+  }
+
   render(){
     return(
-      <div>
-        <p>hel</p>
+      <div className='container'>
+        {this.showPresidents()}
       </div>
     )
   }
 }
 
-export default PresidentsContainer;
+export const mapStateToProps = (state) => ({
+  presidents: state.presidents 
+})
+
+export default connect(mapStateToProps)(PresidentsContainer);
+
+
