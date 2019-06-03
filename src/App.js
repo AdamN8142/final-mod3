@@ -13,5 +13,19 @@ class App extends Component {
       </div>
     )
   }
+
+componentDidMount(){
+  this.fetchPresidents()
 }
+
+
+
+  fetchPresidents = async() => {
+    const url = 'http://localhost:3001/api/v1/presidents'  
+    const response = await fetch(url)
+    const results = await response.json()
+    console.log(results)
+  }
+
+} 
 export default App;
