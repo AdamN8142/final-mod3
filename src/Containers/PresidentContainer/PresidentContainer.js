@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Card from '../../Components/Card'
+import './PresidentContainer.css'
 
 class PresidentsContainer extends Component {
 
@@ -15,7 +16,7 @@ class PresidentsContainer extends Component {
 
   render(){
     return(
-      <div>
+      <div className='container'>
         {this.showPresidents()}
       </div>
     )
