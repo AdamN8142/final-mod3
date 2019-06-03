@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import FilterControls from '../src/Containers/FIlterControls/FilterControls'
 import PresidentContainer from '../src/Containers/PresidentContainer/PresidentContainer'
+import { connect } from 'react-redux'
+import { addPresidents } from '../src/Actions/index'
 
 class App extends Component {
   render() {
@@ -28,4 +30,10 @@ componentDidMount(){
   }
 
 } 
-export default App;
+
+const mapDispatchToProps = (dispatch) => ({
+  addPresidents: (presidents) => dispatch(addPresidents(presidents))
+})
+
+export default connect(null, mapDispatchToProps)(App);
+
