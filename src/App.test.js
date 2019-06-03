@@ -1,9 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { mapDispatchToProps, addPresidents } from '../src/App'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+describe('mapDispatchToProps', () => {
+  it('should call dispatch with an arry of presidents', () => {
+    const mockPresidents = [
+      {name: 'Jerry'},
+      {last: 'Garcia'}
+    ]
+    const mockDispatch = jest.fn()
+    const actionDispatched = addPresidents(mockPresidents)
+    const mappedProps = mapDispatchToProps(mockDispatch)
+    mappedProps.addPresidents(mockPresidents)
+    expect(mockDispatch).toHaveBeenCalledWith(actionDispatched)
+  })
+})

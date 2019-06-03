@@ -32,7 +32,7 @@ componentDidMount(){
 
 } 
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   addPresidents: (presidents) => dispatch(addPresidents(presidents))
 })
 

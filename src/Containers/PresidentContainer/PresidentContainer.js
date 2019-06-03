@@ -23,7 +23,7 @@ class PresidentsContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   presidents: state.presidents 
 })
 
