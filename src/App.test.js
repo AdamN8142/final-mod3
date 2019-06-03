@@ -13,3 +13,4 @@ describe('mapDispatchToProps', () => {
     expect(mockDispatch).toHaveBeenCalledWith(actionDispatched)
   })
 })
+//a
