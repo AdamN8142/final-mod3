@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Card from '../../Components/Card'
 
 class PresidentsContainer extends Component {
 
   showPresidents = () => {
     let mappedPres = this.props.presidents.map((pres)=> {
-      return <div>
-        <h1>{pres.president}</h1>
-      </div>
+      return (
+        <Card pres={pres}/>
+      )
     })
     return mappedPres
   }
